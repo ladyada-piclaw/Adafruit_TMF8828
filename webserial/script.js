@@ -23,6 +23,7 @@ const currentTempDisplay = document.getElementById('current-temp');
 const distanceGrid = document.getElementById('distance-grid');
 const serialLog = document.getElementById('serial-log');
 const logToggle = document.getElementById('log-toggle');
+const interpToggle = document.getElementById('interp-toggle');
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!('serial' in navigator)) {
@@ -36,19 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
   periodSelect.addEventListener('change', () => sendCommand(`PERIOD:${periodSelect.value}`));
   kiterSelect.addEventListener('change', () => sendCommand(`KITER:${kiterSelect.value}`));
   logToggle.addEventListener('click', toggleLog);
+  interpToggle.addEventListener('change', () => {
+    initializeGrid();
+    renderGrid();
+  });
 
   initializeGrid();
 });
 
 function initializeGrid() {
+  const size = interpToggle.checked ? 16 : 8;
+  const count = size * size;
   distanceGrid.innerHTML = '';
-  distanceGrid.style.gridTemplateColumns = 'repeat(8, 1fr)';
-  for (let i = 0; i < 64; i++) {
+  distanceGrid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  for (let i = 0; i < count; i++) {
     const cell = document.createElement('div');
     cell.className = 'grid-cell';
     cell.id = `cell-${i}`;
     cell.textContent = '--';
     cell.style.backgroundColor = '#4a4a6a';
+    if (size === 16) {
+      cell.style.minWidth = '24px';
+      cell.style.minHeight = '24px';
+      cell.style.fontSize = '9px';
+    }
     distanceGrid.appendChild(cell);
   }
 }
@@ -158,6 +170,8 @@ function parseLine(line) {
     frameTemp = parseInt(line.substring(5), 10) || 0;
   } else if (line.startsWith('R') && line.indexOf(':') > 0) {
     // Format: R0:d,d,d,d,d,d,d,d|c,c,c,c,c,c,c,c
+    // Sensor data arrives rotated 90° CW — we rotate CCW here:
+    // source (row, col) -> display (col, 7-row)
     const rowNum = parseInt(line.substring(1, line.indexOf(':')), 10);
     if (rowNum < 0 || rowNum > 7) return;
     const payload = line.substring(line.indexOf(':') + 1);
@@ -166,7 +180,8 @@ function parseLine(line) {
     const confs = parts.length > 1 ? parts[1].split(',').map(v => parseInt(v, 10)) : [];
 
     for (let col = 0; col < 8; col++) {
-      const idx = rowNum * 8 + col;
+      // Rotate 90° CCW: display row = col, display col = 7 - rowNum
+      const idx = col * 8 + (7 - rowNum);
       frameDistances[idx] = dists[col] || 0;
       frameConfidences[idx] = confs[col] || 0;
     }
@@ -188,6 +203,14 @@ function renderGrid() {
   currentTempDisplay.textContent = `${frameTemp}°C`;
   currentPeriodDisplay.textContent = `${periodSelect.value} ms`;
 
+  if (interpToggle.checked) {
+    renderGrid16x16();
+  } else {
+    renderGrid8x8();
+  }
+}
+
+function renderGrid8x8() {
   for (let i = 0; i < 64; i++) {
     const cell = document.getElementById(`cell-${i}`);
     if (!cell) continue;
@@ -202,6 +225,103 @@ function renderGrid() {
       cell.style.backgroundColor = '#4a4a6a';
     }
   }
+}
+
+function renderGrid16x16() {
+  // Build 8x8 source grid (use -1 for invalid cells)
+  const src = [];
+  for (let r = 0; r < 8; r++) {
+    const row = [];
+    for (let c = 0; c < 8; c++) {
+      const idx = r * 8 + c;
+      const dist = frameDistances[idx];
+      const conf = frameConfidences[idx];
+      row.push((conf > 0 && dist > 0 && dist < 4000) ? dist : -1);
+    }
+    src.push(row);
+  }
+
+  // Bicubic interpolate to 16x16
+  const interp = bicubicInterpolate8to16(src);
+
+  for (let r = 0; r < 16; r++) {
+    for (let c = 0; c < 16; c++) {
+      const cell = document.getElementById(`cell-${r * 16 + c}`);
+      if (!cell) continue;
+      const val = interp[r][c];
+      if (val < 0) {
+        cell.textContent = '--';
+        cell.style.backgroundColor = '#4a4a6a';
+      } else {
+        const rounded = Math.round(val);
+        cell.textContent = rounded;
+        cell.style.backgroundColor = distanceToColor(rounded);
+      }
+    }
+  }
+}
+
+// --- Bicubic interpolation ---
+
+function cubicHermite(A, B, C, D, t) {
+  // Catmull-Rom spline
+  const a = -0.5 * A + 1.5 * B - 1.5 * C + 0.5 * D;
+  const b = A - 2.5 * B + 2.0 * C - 0.5 * D;
+  const c = -0.5 * A + 0.5 * C;
+  const d = B;
+  return a * t * t * t + b * t * t + c * t + d;
+}
+
+function sampleClamped(grid, row, col) {
+  const r = Math.max(0, Math.min(row, grid.length - 1));
+  const c = Math.max(0, Math.min(col, grid[0].length - 1));
+  return grid[r][c];
+}
+
+function bicubicInterpolate8to16(src) {
+  // Map each 16x16 output pixel back to the 8x8 source
+  // Output pixel (r,c) maps to source coordinate ((r+0.5)*8/16 - 0.5, (c+0.5)*8/16 - 0.5)
+  // which simplifies to (r/2, c/2) centered on source pixels
+  const out = [];
+  for (let r = 0; r < 16; r++) {
+    const outRow = [];
+    const srcR = (r + 0.5) * 0.5 - 0.5; // source row (fractional)
+    const ri = Math.floor(srcR);
+    const rt = srcR - ri;
+    for (let c = 0; c < 16; c++) {
+      const srcC = (c + 0.5) * 0.5 - 0.5;
+      const ci = Math.floor(srcC);
+      const ct = srcC - ci;
+
+      // Check if any of the 4 nearest source pixels are invalid
+      const nearInvalid =
+        sampleClamped(src, ri, ci) < 0 ||
+        sampleClamped(src, ri, ci + 1) < 0 ||
+        sampleClamped(src, ri + 1, ci) < 0 ||
+        sampleClamped(src, ri + 1, ci + 1) < 0;
+
+      if (nearInvalid) {
+        outRow.push(-1);
+        continue;
+      }
+
+      // Interpolate 4 columns along rows, then interpolate those results along columns
+      const cols = [];
+      for (let m = -1; m <= 2; m++) {
+        cols.push(cubicHermite(
+          sampleClamped(src, ri - 1, ci + m),
+          sampleClamped(src, ri,     ci + m),
+          sampleClamped(src, ri + 1, ci + m),
+          sampleClamped(src, ri + 2, ci + m),
+          rt
+        ));
+      }
+      const val = cubicHermite(cols[0], cols[1], cols[2], cols[3], ct);
+      outRow.push(Math.max(0, val)); // clamp negative interpolation artifacts
+    }
+    out.push(outRow);
+  }
+  return out;
 }
 
 function distanceToColor(dist) {

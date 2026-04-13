@@ -1,0 +1,507 @@
+ets Jul 29 2019 12:21:46
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4744
+load:0x40078000,len:15672
+load:0x40080400,len:3164
+entry 0x4008059c
+TMF8828 8x8 Ranging Test
+begin PASS
+setMode8x8 PASS
+configure PASS
+startRanging PASS
+Frame 0
+ResultNumber=0 Subcapture=0 ValidResults=20 Temp=17 SysTick=242733
+Zone 0: 38 mm  Conf=114
+Zone 1: 39 mm  Conf=112
+Zone 2: 38 mm  Conf=128
+Zone 3: 2352 mm  Conf=26
+Zone 4: 32 mm  Conf=156
+Zone 5: 50 mm  Conf=111
+Zone 6: 48 mm  Conf=113
+Zone 7: 51 mm  Conf=127
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 38 mm  Conf=112
+Zone 11: 39 mm  Conf=118
+Zone 12: 2349 mm  Conf=29
+Zone 13: 25 mm  Conf=158
+Zone 14: 45 mm  Conf=144
+Zone 15: 50 mm  Conf=131
+Zone 16: 50 mm  Conf=137
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 2537 mm  Conf=12
+Zone 22: 0 mm  Conf=0
+Zone 23: 2332 mm  Conf=45
+Zone 24: 0 mm  Conf=0
+Zone 25: 2384 mm  Conf=7
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 2420 mm  Conf=12
+Zone 30: 0 mm  Conf=0
+Zone 31: 0 mm  Conf=0
+Zone 32: 2343 mm  Conf=36
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 1
+ResultNumber=1 Subcapture=1 ValidResults=17 Temp=17 SysTick=696601
+Zone 0: 0 mm  Conf=0
+Zone 1: 38 mm  Conf=116
+Zone 2: 2329 mm  Conf=21
+Zone 3: 2378 mm  Conf=15
+Zone 4: 33 mm  Conf=155
+Zone 5: 45 mm  Conf=150
+Zone 6: 50 mm  Conf=148
+Zone 7: 48 mm  Conf=117
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 38 mm  Conf=118
+Zone 11: 2310 mm  Conf=30
+Zone 12: 36 mm  Conf=116
+Zone 13: 37 mm  Conf=132
+Zone 14: 46 mm  Conf=121
+Zone 15: 51 mm  Conf=145
+Zone 16: 47 mm  Conf=114
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 2311 mm  Conf=6
+Zone 23: 2338 mm  Conf=10
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 2299 mm  Conf=37
+Zone 32: 0 mm  Conf=0
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 2
+ResultNumber=4 Subcapture=0 ValidResults=20 Temp=17 SysTick=1149735
+Zone 0: 37 mm  Conf=117
+Zone 1: 39 mm  Conf=110
+Zone 2: 38 mm  Conf=128
+Zone 3: 2330 mm  Conf=27
+Zone 4: 32 mm  Conf=153
+Zone 5: 49 mm  Conf=111
+Zone 6: 48 mm  Conf=110
+Zone 7: 51 mm  Conf=128
+Zone 8: 0 mm  Conf=0
+Zone 9: 37 mm  Conf=113
+Zone 10: 38 mm  Conf=115
+Zone 11: 38 mm  Conf=118
+Zone 12: 2329 mm  Conf=30
+Zone 13: 25 mm  Conf=158
+Zone 14: 45 mm  Conf=142
+Zone 15: 49 mm  Conf=132
+Zone 16: 49 mm  Conf=137
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 0 mm  Conf=0
+Zone 23: 2316 mm  Conf=48
+Zone 24: 0 mm  Conf=0
+Zone 25: 2361 mm  Conf=9
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 2390 mm  Conf=11
+Zone 30: 0 mm  Conf=0
+Zone 31: 0 mm  Conf=0
+Zone 32: 2324 mm  Conf=32
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 3
+ResultNumber=6 Subcapture=2 ValidResults=18 Temp=17 SysTick=1603331
+Zone 0: 36 mm  Conf=114
+Zone 1: 2334 mm  Conf=7
+Zone 2: 35 mm  Conf=154
+Zone 3: 2286 mm  Conf=49
+Zone 4: 34 mm  Conf=133
+Zone 5: 50 mm  Conf=123
+Zone 6: 48 mm  Conf=111
+Zone 7: 51 mm  Conf=127
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 2376 mm  Conf=8
+Zone 11: 37 mm  Conf=139
+Zone 12: 2310 mm  Conf=42
+Zone 13: 32 mm  Conf=156
+Zone 14: 46 mm  Conf=148
+Zone 15: 50 mm  Conf=112
+Zone 16: 50 mm  Conf=119
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 0 mm  Conf=0
+Zone 23: 2333 mm  Conf=27
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 2354 mm  Conf=9
+Zone 30: 0 mm  Conf=0
+Zone 31: 0 mm  Conf=0
+Zone 32: 2343 mm  Conf=18
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 4
+ResultNumber=9 Subcapture=1 ValidResults=16 Temp=17 SysTick=2056803
+Zone 0: 0 mm  Conf=0
+Zone 1: 37 mm  Conf=118
+Zone 2: 2337 mm  Conf=24
+Zone 3: 2365 mm  Conf=16
+Zone 4: 32 mm  Conf=155
+Zone 5: 45 mm  Conf=150
+Zone 6: 48 mm  Conf=147
+Zone 7: 48 mm  Conf=117
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 37 mm  Conf=118
+Zone 11: 2312 mm  Conf=30
+Zone 12: 35 mm  Conf=116
+Zone 13: 37 mm  Conf=132
+Zone 14: 46 mm  Conf=121
+Zone 15: 50 mm  Conf=145
+Zone 16: 46 mm  Conf=114
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 0 mm  Conf=0
+Zone 23: 2336 mm  Conf=10
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 2281 mm  Conf=40
+Zone 32: 0 mm  Conf=0
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 5
+ResultNumber=12 Subcapture=0 ValidResults=18 Temp=17 SysTick=2510573
+Zone 0: 37 mm  Conf=111
+Zone 1: 39 mm  Conf=109
+Zone 2: 38 mm  Conf=128
+Zone 3: 2329 mm  Conf=31
+Zone 4: 32 mm  Conf=156
+Zone 5: 49 mm  Conf=111
+Zone 6: 48 mm  Conf=113
+Zone 7: 51 mm  Conf=130
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 38 mm  Conf=115
+Zone 11: 39 mm  Conf=115
+Zone 12: 2338 mm  Conf=24
+Zone 13: 25 mm  Conf=158
+Zone 14: 45 mm  Conf=142
+Zone 15: 49 mm  Conf=131
+Zone 16: 50 mm  Conf=137
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 0 mm  Conf=0
+Zone 23: 2302 mm  Conf=45
+Zone 24: 0 mm  Conf=0
+Zone 25: 2367 mm  Conf=9
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 0 mm  Conf=0
+Zone 32: 2314 mm  Conf=31
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 6
+ResultNumber=15 Subcapture=3 ValidResults=19 Temp=22 SysTick=2963939
+Zone 0: 2391 mm  Conf=8
+Zone 1: 37 mm  Conf=111
+Zone 2: 37 mm  Conf=123
+Zone 3: 34 mm  Conf=120
+Zone 4: 33 mm  Conf=156
+Zone 5: 45 mm  Conf=141
+Zone 6: 50 mm  Conf=123
+Zone 7: 46 mm  Conf=114
+Zone 8: 0 mm  Conf=0
+Zone 9: 2361 mm  Conf=16
+Zone 10: 37 mm  Conf=116
+Zone 11: 2281 mm  Conf=47
+Zone 12: 35 mm  Conf=131
+Zone 13: 38 mm  Conf=143
+Zone 14: 46 mm  Conf=110
+Zone 15: 53 mm  Conf=132
+Zone 16: 47 mm  Conf=116
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 2315 mm  Conf=35
+Zone 21: 2348 mm  Conf=28
+Zone 22: 0 mm  Conf=0
+Zone 23: 0 mm  Conf=0
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 2317 mm  Conf=13
+Zone 32: 0 mm  Conf=0
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 7
+ResultNumber=17 Subcapture=1 ValidResults=17 Temp=22 SysTick=3417647
+Zone 0: 0 mm  Conf=0
+Zone 1: 38 mm  Conf=115
+Zone 2: 2342 mm  Conf=22
+Zone 3: 2367 mm  Conf=14
+Zone 4: 32 mm  Conf=158
+Zone 5: 45 mm  Conf=150
+Zone 6: 49 mm  Conf=145
+Zone 7: 47 mm  Conf=117
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 37 mm  Conf=118
+Zone 11: 2328 mm  Conf=36
+Zone 12: 35 mm  Conf=118
+Zone 13: 37 mm  Conf=131
+Zone 14: 46 mm  Conf=120
+Zone 15: 50 mm  Conf=144
+Zone 16: 46 mm  Conf=114
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 2295 mm  Conf=7
+Zone 23: 2353 mm  Conf=10
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 2293 mm  Conf=35
+Zone 32: 0 mm  Conf=0
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 8
+ResultNumber=19 Subcapture=3 ValidResults=20 Temp=22 SysTick=3870537
+Zone 0: 2399 mm  Conf=10
+Zone 1: 38 mm  Conf=109
+Zone 2: 38 mm  Conf=123
+Zone 3: 35 mm  Conf=118
+Zone 4: 33 mm  Conf=156
+Zone 5: 46 mm  Conf=138
+Zone 6: 51 mm  Conf=124
+Zone 7: 47 mm  Conf=114
+Zone 8: 0 mm  Conf=0
+Zone 9: 2360 mm  Conf=14
+Zone 10: 37 mm  Conf=116
+Zone 11: 2291 mm  Conf=47
+Zone 12: 35 mm  Conf=134
+Zone 13: 38 mm  Conf=145
+Zone 14: 46 mm  Conf=110
+Zone 15: 53 mm  Conf=132
+Zone 16: 47 mm  Conf=119
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 2329 mm  Conf=36
+Zone 21: 2344 mm  Conf=22
+Zone 22: 0 mm  Conf=0
+Zone 23: 0 mm  Conf=0
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 2388 mm  Conf=12
+Zone 31: 2308 mm  Conf=13
+Zone 32: 0 mm  Conf=0
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 9
+ResultNumber=22 Subcapture=2 ValidResults=18 Temp=22 SysTick=4324071
+Zone 0: 36 mm  Conf=114
+Zone 1: 2347 mm  Conf=21
+Zone 2: 35 mm  Conf=154
+Zone 3: 2283 mm  Conf=45
+Zone 4: 34 mm  Conf=133
+Zone 5: 50 mm  Conf=123
+Zone 6: 48 mm  Conf=110
+Zone 7: 51 mm  Conf=127
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 2379 mm  Conf=11
+Zone 11: 37 mm  Conf=138
+Zone 12: 2305 mm  Conf=44
+Zone 13: 32 mm  Conf=156
+Zone 14: 46 mm  Conf=145
+Zone 15: 49 mm  Conf=112
+Zone 16: 50 mm  Conf=119
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 2524 mm  Conf=9
+Zone 22: 0 mm  Conf=0
+Zone 23: 2340 mm  Conf=31
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 0 mm  Conf=0
+Zone 32: 2342 mm  Conf=13
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 10
+ResultNumber=25 Subcapture=1 ValidResults=17 Temp=22 SysTick=4777647
+Zone 0: 0 mm  Conf=0
+Zone 1: 38 mm  Conf=118
+Zone 2: 2342 mm  Conf=20
+Zone 3: 2372 mm  Conf=16
+Zone 4: 32 mm  Conf=158
+Zone 5: 45 mm  Conf=150
+Zone 6: 49 mm  Conf=147
+Zone 7: 47 mm  Conf=115
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 37 mm  Conf=118
+Zone 11: 2310 mm  Conf=37
+Zone 12: 35 mm  Conf=116
+Zone 13: 37 mm  Conf=131
+Zone 14: 46 mm  Conf=122
+Zone 15: 50 mm  Conf=144
+Zone 16: 46 mm  Conf=114
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 2298 mm  Conf=8
+Zone 23: 2350 mm  Conf=10
+Zone 24: 0 mm  Conf=0
+Zone 25: 0 mm  Conf=0
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 2290 mm  Conf=39
+Zone 32: 0 mm  Conf=0
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+Frame 11
+ResultNumber=28 Subcapture=0 ValidResults=17 Temp=22 SysTick=5231071
+Zone 0: 37 mm  Conf=114
+Zone 1: 0 mm  Conf=0
+Zone 2: 38 mm  Conf=128
+Zone 3: 2326 mm  Conf=26
+Zone 4: 32 mm  Conf=156
+Zone 5: 48 mm  Conf=110
+Zone 6: 48 mm  Conf=110
+Zone 7: 51 mm  Conf=130
+Zone 8: 0 mm  Conf=0
+Zone 9: 0 mm  Conf=0
+Zone 10: 38 mm  Conf=112
+Zone 11: 39 mm  Conf=118
+Zone 12: 2330 mm  Conf=31
+Zone 13: 24 mm  Conf=158
+Zone 14: 45 mm  Conf=142
+Zone 15: 50 mm  Conf=131
+Zone 16: 49 mm  Conf=134
+Zone 17: 0 mm  Conf=0
+Zone 18: 0 mm  Conf=0
+Zone 19: 0 mm  Conf=0
+Zone 20: 0 mm  Conf=0
+Zone 21: 0 mm  Conf=0
+Zone 22: 0 mm  Conf=0
+Zone 23: 2312 mm  Conf=48
+Zone 24: 0 mm  Conf=0
+Zone 25: 2346 mm  Conf=14
+Zone 26: 0 mm  Conf=0
+Zone 27: 0 mm  Conf=0
+Zone 28: 0 mm  Conf=0
+Zone 29: 0 mm  Conf=0
+Zone 30: 0 mm  Conf=0
+Zone 31: 0 mm  Conf=0
+Zone 32: 2323 mm  Conf=30
+Zone 33: 0 mm  Conf=0
+Zone 34: 0 mm  Conf=0
+Zone 35: 0 mm  Conf=0
+stopRanging PASS
+resultNumber coverage PASS
+validResults nonzero PASS
+temperature range PASS
+sysTick increasing PASS
+zone distance/confidence PASS
+subcapture set PASS
+Subcapture Distance Grids (6x6 each)
+Subcapture 0
+    38   39   38 2352   32   50
+    48   51    0    0   38   39
+  2349   25   45   50   50    0
+     0    0    0 2537    0 2332
+     0 2384    0    0    0 2420
+     0    0 2343    0    0    0
+Subcapture 1
+     0   38 2329 2378   33   45
+    50   48    0    0   38 2310
+    36   37   46   51   47    0
+     0    0    0    0 2311 2338
+     0    0    0    0    0    0
+     0 2299    0    0    0    0
+Subcapture 2
+    36 2334   35 2286   34   50
+    48   51    0    0 2376   37
+  2310   32   46   50   50    0
+     0    0    0    0    0 2333
+     0    0    0    0    0 2354
+     0    0 2343    0    0    0
+Subcapture 3
+  2391   37   37   34   33   45
+    50   46    0 2361   37 2281
+    35   38   46   53   47    0
+     0    0 2315 2348    0    0
+     0    0    0    0    0    0
+     0 2317    0    0    0    0
+PASS
